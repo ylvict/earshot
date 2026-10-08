@@ -124,7 +124,7 @@ export async function createNodeEngine(options: RecognizerOptions): Promise<RawE
   const OnlineRecognizer = loadSherpa();
   if (!OnlineRecognizer) {
     throw new Error(
-      "sherpa-onnx-node is not installed. Run: npm install sherpa-onnx-node (it is bundled with @earshot/engine-node).",
+      "sherpa-onnx-node is not installed. Run: npm install sherpa-onnx-node (it is bundled with @ylvict/earshot-engine-node).",
     );
   }
   const spec = resolveModel(options.model ?? 'zh-en');

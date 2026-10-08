@@ -1,5 +1,5 @@
 {
-  "name": "@earshot/core",
+  "name": "@ylvict/earshot-core",
   "version": "0.1.0",
   "description": "Shared contracts, session state machine and audio helpers used by every Earshot surface.",
   "license": "MIT",

@@ -26,7 +26,7 @@ async function startServer(): Promise<number> {
   return server.listen(0, '127.0.0.1');
 }
 
-describe('@earshot/server', () => {
+describe('@ylvict/earshot-server', () => {
   it('GET /health reports ok', async () => {
     const port = await startServer();
     const res = await fetch(`http://127.0.0.1:${port}/health`);

@@ -1,5 +1,5 @@
 {
-  "name": "@earshot/engine-node",
+  "name": "@ylvict/earshot-engine-node",
   "version": "0.1.0",
   "private": true,
   "description": "Internal adapter that runs Earshot on the sherpa-onnx-node native addon.",

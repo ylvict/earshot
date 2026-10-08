@@ -1,6 +1,6 @@
 # API Reference
 
-Everything below is defined once in `@earshot/core` and reused unchanged by the
+Everything below is defined once in `@ylvict/earshot-core` and reused unchanged by the
 Node SDK, the WASM SDK and the service protocol.
 
 ## TypeScript types
@@ -32,7 +32,7 @@ interface StreamOptions {
 }
 ```
 
-## Node SDK (`@earshot/sdk`)
+## Node SDK (`@ylvict/earshot-sdk`)
 
 ```ts
 const asr = await createRecognizer({ model: 'zh-en' });
@@ -53,20 +53,20 @@ const lines = await session.end();            // final result
 for await (const line of asr.stream()) handle(line);
 ```
 
-## Browser SDK (`@earshot/sdk/wasm`)
+## Browser SDK (`@ylvict/earshot-sdk/wasm`)
 
 Load the official sherpa-onnx wasm module, then pass the resulting
 `sherpa_onnx` object in. The recognizer surface is identical to Node.
 
 ```ts
-import { createRecognizerInBrowser } from '@earshot/sdk/wasm';
+import { createRecognizerInBrowser } from '@ylvict/earshot-sdk/wasm';
 
 // api = the sherpa_onnx object from the official wasm loader
 const asr = createRecognizerInBrowser(api, { model: 'zh-en', modelDir: 'https://cdn.example.com/models' });
 const text = await asr.transcribe(analyzerBuffer);
 ```
 
-## Service API (`@earshot/server`)
+## Service API (`@ylvict/earshot-server`)
 
 Start it:
 

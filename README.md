@@ -4,16 +4,16 @@ Hear it. Read it. Local-first streaming speech-to-text for Node.js, browsers (WA
 
 > [中文文档 → README.zh.md](README.zh.md)
 
-[![npm](https://img.shields.io/npm/v/@earshot/sdk)](https://www.npmjs.com/package/@earshot/sdk) [![build](https://img.shields.io/github/actions/workflow/status/earshot/earshot/ci.yml?label=build)](https://github.com/earshot/earshot/actions) [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![npm](https://img.shields.io/npm/v/@ylvict/earshot-sdk)](https://www.npmjs.com/package/@ylvict/earshot-sdk) [![build](https://img.shields.io/github/actions/workflow/status/ylvict/earshot/ci.yml?label=build)](https://github.com/ylvict/earshot/actions) [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ```bash
-npm install @earshot/sdk
+npm install @ylvict/earshot-sdk
 ```
 
 ## 🚀 Quick Start
 
 ```ts
-import { createRecognizer } from '@earshot/sdk';
+import { createRecognizer } from '@ylvict/earshot-sdk';
 
 // One line — audio to text
 const asr = await createRecognizer({ model: 'zh-en' });
@@ -76,7 +76,7 @@ the exact same events the SDK emits locally.
 Load the official sherpa-onnx wasm module, then hand it to Earshot:
 
 ```ts
-import { createRecognizerInBrowser } from '@earshot/sdk/wasm';
+import { createRecognizerInBrowser } from '@ylvict/earshot-sdk/wasm';
 const asr = createRecognizerInBrowser(sherpaOnnx, {
   model: 'zh-en',
   modelDir: 'https://cdn.example.com/models',
@@ -106,9 +106,9 @@ streaming semantics.
 
 | Package | Surface | Notes |
 | --- | --- | --- |
-| [`@earshot/core`](src/core) | shared contract | types, session, audio, manifest |
-| [`@earshot/sdk`](src/sdk) | Node SDK + WASM entry | what most apps install |
-| [`@earshot/server`](src/server) | REST + WebSocket | for non-Node clients |
+| [`@ylvict/earshot-core`](src/core) | shared contract | types, session, audio, manifest |
+| [`@ylvict/earshot-sdk`](src/sdk) | Node SDK + WASM entry | what most apps install |
+| [`@ylvict/earshot-server`](src/server) | REST + WebSocket | for non-Node clients |
 
 ## 📚 Docs
 

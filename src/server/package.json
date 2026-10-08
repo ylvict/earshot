@@ -1,5 +1,5 @@
 {
-  "name": "@earshot/server",
+  "name": "@ylvict/earshot-server",
   "version": "0.1.0",
   "description": "Earshot as a service: REST transcription plus streaming WebSocket endpoint.",
   "license": "MIT",
@@ -32,7 +32,7 @@
     "prepublishOnly": "npm run typecheck && npm run build"
   },
   "dependencies": {
-    "@earshot/core": "^0.1.0",
+    "@ylvict/earshot-core": "^0.1.0",
     "sherpa-onnx-node": "^1.13.8",
     "ws": "^8.18.0"
   },

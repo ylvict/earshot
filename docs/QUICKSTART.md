@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npm install @earshot/sdk
+npm install @ylvict/earshot-sdk
 ```
 
 The first time you transcribe, the model is downloaded automatically to
@@ -12,7 +12,7 @@ The first time you transcribe, the model is downloaded automatically to
 ## 1. Turn an utterance into text
 
 ```ts
-import { createRecognizer } from '@earshot/sdk';
+import { createRecognizer } from '@ylvict/earshot-sdk';
 
 const asr = await createRecognizer({ model: 'zh-en' });
 const text = await asr.transcribe(wavBuffer);   // WAV bytes, Float32Array, Int16Array...
@@ -42,7 +42,7 @@ Serve the wasm assets + model files from any static host, load the official
 sherpa-onnx wasm module, then:
 
 ```ts
-import { createRecognizerInBrowser } from '@earshot/sdk/wasm';
+import { createRecognizerInBrowser } from '@ylvict/earshot-sdk/wasm';
 const asr = createRecognizerInBrowser(sherpaOnnx, { modelDir: '/models' });
 ```
 

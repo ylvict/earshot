@@ -4,16 +4,16 @@
 
 > [English → README.md](README.md)
 
-[![npm](https://img.shields.io/npm/v/@earshot/sdk)](https://www.npmjs.com/package/@earshot/sdk) [![build](https://img.shields.io/github/actions/workflow/status/earshot/earshot/ci.yml?label=build)](https://github.com/earshot/earshot/actions) [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![npm](https://img.shields.io/npm/v/@ylvict/earshot-sdk)](https://www.npmjs.com/package/@ylvict/earshot-sdk) [![build](https://img.shields.io/github/actions/workflow/status/ylvict/earshot/ci.yml?label=build)](https://github.com/ylvict/earshot/actions) [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ```bash
-npm install @earshot/sdk
+npm install @ylvict/earshot-sdk
 ```
 
 ## 🚀 快速开始
 
 ```ts
-import { createRecognizer } from '@earshot/sdk';
+import { createRecognizer } from '@ylvict/earshot-sdk';
 
 // 一行 —— 音频转文字
 const asr = await createRecognizer({ model: 'zh-en' });
@@ -76,7 +76,7 @@ WebSocket 客户端推入 PCM 分片，收到 `partial`/`segment`/`end` 事件 �
 先加载官方 sherpa-onnx wasm 模块，再交给 Earshot：
 
 ```ts
-import { createRecognizerInBrowser } from '@earshot/sdk/wasm';
+import { createRecognizerInBrowser } from '@ylvict/earshot-sdk/wasm';
 const asr = createRecognizerInBrowser(sherpaOnnx, {
   model: 'zh-en',
   modelDir: 'https://cdn.example.com/models',
@@ -105,9 +105,9 @@ WebSocket 服务之下，任何消费者看到的流式语义都一致。
 
 | 包 | 形态 | 说明 |
 | --- | --- | --- |
-| [`@earshot/core`](src/core) | 公共契约 | 类型、会话、音频、模型清单 |
-| [`@earshot/sdk`](src/sdk) | Node SDK + WASM 入口 | 大多数应用装这个 |
-| [`@earshot/server`](src/server) | REST + WebSocket | 给非 Node 客户端 |
+| [`@ylvict/earshot-core`](src/core) | 公共契约 | 类型、会话、音频、模型清单 |
+| [`@ylvict/earshot-sdk`](src/sdk) | Node SDK + WASM 入口 | 大多数应用装这个 |
+| [`@ylvict/earshot-server`](src/server) | REST + WebSocket | 给非 Node 客户端 |
 
 ## 📚 文档
 

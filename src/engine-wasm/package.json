@@ -1,5 +1,5 @@
 {
-  "name": "@earshot/engine-wasm",
+  "name": "@ylvict/earshot-engine-wasm",
   "version": "0.1.0",
   "private": true,
   "description": "Internal adapter that runs Earshot on the sherpa-onnx WebAssembly build in browsers.",

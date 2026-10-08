@@ -8,5 +8,5 @@ export default defineConfig({
   clean: true,
   target: 'node18',
   platform: 'node',
-  external: ['ws', 'sherpa-onnx-node', '@earshot/core'],
+  external: ['ws', 'sherpa-onnx-node', '@ylvict/earshot-core'],
 });
