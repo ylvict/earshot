@@ -1,0 +1,52 @@
+{
+  "models": [
+    {
+      "id": "stream-zh-en",
+      "kind": "zipformer",
+      "language": "zh-en",
+      "license": "Apache-2.0",
+      "sizeHint": "~510MB",
+      "archive": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20.tar.bz2",
+      "mirrors": [
+        "https://gh-proxy.com"
+      ],
+      "archiveMap": {
+        "encoder": "encoder-epoch-99-avg-1.int8.onnx",
+        "decoder": "decoder-epoch-99-avg-1.onnx",
+        "joiner": "joiner-epoch-99-avg-1.int8.onnx",
+        "tokens": "tokens.txt"
+      },
+      "files": {
+        "encoder": "encoder.onnx",
+        "decoder": "decoder.onnx",
+        "joiner": "joiner.onnx",
+        "tokens": "tokens.txt"
+      }
+    },
+    {
+      "id": "stream-paraformer-zh-en",
+      "kind": "paraformer",
+      "language": "zh-en",
+      "license": "Apache-2.0",
+      "sizeHint": "~300MB",
+      "archive": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-paraformer-bilingual-zh-en.tar.bz2",
+      "mirrors": [
+        "https://gh-proxy.com"
+      ],
+      "archiveMap": {
+        "encoder": "encoder.int8.onnx",
+        "decoder": "decoder.int8.onnx",
+        "tokens": "tokens.txt"
+      },
+      "files": {
+        "encoder": "encoder.onnx",
+        "decoder": "decoder.onnx",
+        "tokens": "tokens.txt"
+      }
+    }
+  ],
+  "aliases": {
+    "zh-en": "stream-zh-en",
+    "zh-en-paraformer": "stream-paraformer-zh-en"
+  }
+}
