@@ -3,8 +3,6 @@ import type { ModelSpec, RawEngine, RawStream, RecognizerOptions } from '../../c
 import { resolveModel, modelPaths } from '../../core/src/index.ts';
 import { ensureModels } from './model-manager.ts';
 
-const require = createRequire(import.meta.url);
-
 const SILENCE_TAIL_SECONDS = 0.4;
 
 interface SherpaStream {
@@ -23,9 +21,20 @@ interface SherpaRecognizer {
 
 type SherpaRecognizerConstructor = new (config: unknown) => SherpaRecognizer;
 
+// Load a native/CJS-only module in both ESM and CJS bundles. Evaluated lazily
+// so bundlers can't eagerly replace `import.meta` for the wrong output format:
+// a CJS bundle has a real `require`; pure ESM needs createRequire(import.meta.url).
+function nativeRequire(id: string): unknown {
+  try {
+    return (0, eval)('require')(id);
+  } catch {
+    return createRequire(import.meta.url)(id);
+  }
+}
+
 function loadSherpa(): SherpaRecognizerConstructor | null {
   try {
-    const mod = require('sherpa-onnx-node') as { OnlineRecognizer?: SherpaRecognizerConstructor };
+    const mod = nativeRequire('sherpa-onnx-node') as { OnlineRecognizer?: SherpaRecognizerConstructor };
     return mod.OnlineRecognizer ?? null;
   } catch {
     return null;
